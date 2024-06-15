@@ -10,3 +10,32 @@ body {
 }
 
 
+.section {
+  max-width: 1150px;  /* max-w-[1150px] */
+  z-index: 10;        /* z-10 */
+  padding-left: 1rem; /* px-4 (1rem = 16px) */
+  padding-right: 1rem; /* px-4 (1rem = 16px) */
+  margin-bottom: 1rem; /* mb-28 (7rem = 112px) */
+  overflow: hidden;   /* overflow-hidden */
+  position: relative; /* relative */
+}
+
+/* For small screens and above (sm) */
+@media (min-width: 640px) {
+  .section {
+    padding-left: 3rem;  /* sm:px-12 (3rem = 48px) */
+    padding-right: 3rem; /* sm:px-12 (3rem = 48px) */
+  }
+}
+@media (max-width: 640px) {
+  .section {
+    margin-bottom: 3rem; 
+  }
+}
+
+/* For medium screens and above (md) */
+@media (min-width: 768px) {
+  .section {
+    padding: 4.3rem; /* md:p-28 (7rem = 112px) */
+  }
+}

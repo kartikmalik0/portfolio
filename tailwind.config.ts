@@ -19,7 +19,7 @@ const config: Config = {
                 lightdark: "#111",
                 whitetext: "#ebecf3",
                 lightgreen: "#0aff9d",
-
+                lightblack:"#232323",
             },
         },
     },
