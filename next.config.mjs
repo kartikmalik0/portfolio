@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images: {
+        domains: ['steam-portfolio-demo.vercel.app'],
+      },
+};
 
 export default nextConfig;
