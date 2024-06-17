@@ -10,11 +10,11 @@ body {
 }
 
 
+
 .section {
   max-width: 1150px;  /* max-w-[1150px] */
   z-index: 10;        /* z-10 */
-  padding-left: 1rem; /* px-4 (1rem = 16px) */
-  padding-right: 1rem; /* px-4 (1rem = 16px) */
+  padding-inline: 1rem;/* px-4 (1rem = 16px) */
   margin-bottom: 1rem; /* mb-28 (7rem = 112px) */
   overflow: hidden;   /* overflow-hidden */
   position: relative; /* relative */
@@ -36,6 +36,6 @@ body {
 /* For medium screens and above (md) */
 @media (min-width: 768px) {
   .section {
-    padding: 4.3rem; /* md:p-28 (7rem = 112px) */
+    padding: 5.7rem; /* md:p-28 (7rem = 112px) */
   }
 }
