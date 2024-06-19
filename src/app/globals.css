@@ -14,7 +14,7 @@ body {
 .section {
   max-width: 1150px;  /* max-w-[1150px] */
   z-index: 10;        /* z-10 */
-  padding-inline: 1rem;/* px-4 (1rem = 16px) */
+  padding-inline: 0.3rem;/* px-4 (1rem = 16px) */
   margin-bottom: 1rem; /* mb-28 (7rem = 112px) */
   overflow: hidden;   /* overflow-hidden */
   position: relative; /* relative */
