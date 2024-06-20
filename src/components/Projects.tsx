@@ -3,7 +3,7 @@ import Image from "next/image"
 const Projects = () => {
     return (
         <section className="section ">
-            <div className=" flex items-center gap-6 text-4xl md:text-6xl mb-6">
+            <div className="  items-center flex gap-6 text-4xl md:text-6xl mb-6">
                 <div className=" w-full h-[1px] opacity-30 bg-whitetext" />
                 <h3 className=" text-whitetext font-[900]">Projects<span className="text-lightgreen">.</span></h3>
             </div>
@@ -150,7 +150,7 @@ const Projects = () => {
                     </div>
                 </div>
             </div>
-            
+
         </section>
     )
 }
