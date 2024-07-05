@@ -47,3 +47,39 @@ export async function fetchExp() {
         throw new Error("Unable to fetch Projects");
     }
 }
+
+export async function fetchLinks() {
+    try {
+        const links = await prisma.socialLink.findMany()
+        return {links}
+    } catch (error) {
+        throw new Error("Unable to fetch Links");
+    }
+}
+
+export async function fetchResume() {
+    try {
+        const hero = await prisma.hero.findMany({
+            select: {
+                resumeUrl: true
+            }
+        });
+        return { resumeUrl: hero[0].resumeUrl }; 
+    } catch (error) {
+        throw new Error("Unable to fetch Resume URL");
+    }
+}
+
+
+export async function fetchEmail() {
+    try {
+        const hero = await prisma.hero.findMany({
+            select: {
+                email: true
+            }
+        });
+        return { email: hero[0].email }; 
+    } catch (error) {
+        throw new Error("Unable to fetch Email");
+    }
+}

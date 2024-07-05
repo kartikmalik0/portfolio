@@ -5,7 +5,6 @@ import { useQuery } from "@tanstack/react-query"
 
 const Experience = () => {
 
-
     const { data } = useQuery({
         queryKey: ["exp"],
         queryFn: async () => await fetchExp()
