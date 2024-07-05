@@ -35,7 +35,7 @@ const Contact = () => {
     }
 
     return (
-        <section id="contact" className="section" style={{ paddingBlock: "5rem" }}>
+        <section id="contact" className="section " style={{ paddingBlock: "5rem" }}>
             <div className=" flex items-center gap-6 text-5xl md:text-6xl w-full mb-6">
                 <h3 className=" text-whitetext font-[900] mx-auto">Contact<span className="text-lightgreen">.</span></h3>
             </div>
