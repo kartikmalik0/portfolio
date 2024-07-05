@@ -16,7 +16,7 @@ const HomePage = () => {
       <Element name="about"><About /></Element>
       <Element name="projects"><Projects /></Element>
       <Element name="experience"><Experience /></Element>
-      <Element name="contact"><Contact /></Element>
+      <Element className="mb-12" name="contact"><Contact /></Element>
     </div>
   )
 }
