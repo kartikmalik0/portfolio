@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['steam-portfolio-demo.vercel.app'],
+        domains: ['steam-portfolio-demo.vercel.app','utfs.io'],
       },
      
 

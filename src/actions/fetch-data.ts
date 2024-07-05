@@ -28,3 +28,22 @@ export async function fetchSkills() {
         throw new Error("Unable to fetch Skills");
     }
 }
+
+
+export async function fetchProjects() {
+    try {
+        const project = await prisma.project.findMany();
+        return { project };
+    } catch (error) {
+        throw new Error("Unable to fetch Projects");
+    }
+}
+
+export async function fetchExp() {
+    try {
+        const exp = await prisma.experience.findMany();
+        return { exp };
+    } catch (error) {
+        throw new Error("Unable to fetch Projects");
+    }
+}

@@ -20,7 +20,6 @@ const Skills = () => {
 
     const skills: Skill[] = data?.skill[0].skills as Skill[]
 
-    console.log(skills)
 
     return (
         <div className="flex overflow-hidden flex-col ">
