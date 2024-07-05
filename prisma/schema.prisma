@@ -1,0 +1,57 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Hero {
+  id              String  @id @default(uuid())
+  name            String
+  role            String
+  roleDescription String
+  email           String
+  phoneNumber     String
+  resumeUrl       String?
+  // Removed portfolio relation
+}
+
+model SocialLink {
+  id    String @id @default(uuid())
+  links Json[]
+}
+
+model About {
+  id           String @id @default(uuid())
+  description1 String
+  description2 String
+  description3 String
+}
+
+model Skill {
+  id     String @id @default(uuid())
+  skills Json[]
+}
+
+model Project {
+  id          String   @id @default(uuid())
+  title       String
+  imageUrl    String
+  liveUrl     String
+  githubUrl   String
+  techUsed    String[]
+  description String
+}
+
+model Experience {
+  id          String    @id @default(uuid())
+  companyName String
+  joinDate    DateTime
+  leaveDate   DateTime? 
+  role        String
+  location    String
+  description String
+  techUsed    String[]
+}
