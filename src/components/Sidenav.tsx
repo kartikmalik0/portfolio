@@ -41,7 +41,7 @@ const Sidenav = () => {
           to={link.href}
           spy={true}
           smooth={true}
-          offset={-100}
+          offset={-30}
           duration={500}
           onSetActive={() => handleSetActive(index)}
           className={`h-[100px] cursor-pointer w-full font-[300] text-[18px] flex justify-center items-center border-r ${activeLink === index ? 'border-r-lightgreen' : 'border-transparent'} hover:border-r-lightgreen hover:transition duration-300 ease-in-out`}

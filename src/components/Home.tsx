@@ -7,16 +7,19 @@ import Navbar from "./Navbar"
 import { Element } from 'react-scroll';
 
 import Projects from "./Projects"
+import MaxWidthWrapper from "@/providers/maxWidthWrapper"
 
 const HomePage = () => {
   return (
     <div className="bg-[#111]">
       <Navbar />
-      <Hero />
-      <Element name="about"><About /></Element>
-      <Element name="projects"><Projects /></Element>
-      <Element name="experience"><Experience /></Element>
-      <Element className="mb-12" name="contact"><Contact /></Element>
+      <MaxWidthWrapper>
+        <Hero />
+        <Element name="about"><About /></Element>
+        <Element name="projects"><Projects /></Element>
+        <Element name="experience"><Experience /></Element>
+        <Element id="contactSection" className="mb-32" name="contact"><Contact /></Element>
+      </MaxWidthWrapper>
     </div>
   )
 }
