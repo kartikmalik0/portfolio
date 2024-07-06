@@ -12,7 +12,7 @@ const Hero = () => {
 
 
     return (
-        <HeroHighlight>
+        <HeroHighlight className="w-full">
             {
                 data?.hero && data.hero.map((hero) => (
                     <section key={hero.id} className="section py-20 ">
