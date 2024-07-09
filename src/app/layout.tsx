@@ -3,12 +3,13 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import QueryProvider from "@/providers/queryProvider";
 import Head from "next/head"
+import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 
 const siteTitle = process.env.NEXT_PUBLIC_SITE_TITLE || "John Doe";
 const siteDescription = process.env.NEXT_PUBLIC_SITE_DESCRIPTION || "Software Engg.";
 const faviconUrl = process.env.NEXT_PUBLIC_FAVICON_URL || "/favicon.ico";
-const imageUrl = process.env.NEXT_PUBLIC_THUMBNAIL_IMAGE 
+const imageUrl = process.env.NEXT_PUBLIC_THUMBNAIL_IMAGE
 
 
 export const metadata: Metadata = {
@@ -33,6 +34,15 @@ export default function RootLayout({
         <QueryProvider>
           {children}
         </QueryProvider>
+        {imageUrl && ( 
+          <Image
+            src={imageUrl}
+            alt="Your social media preview image"
+            width={800}
+            height={600}
+            layout="responsive" 
+          />
+        )}
       </body>
     </html>
   );
