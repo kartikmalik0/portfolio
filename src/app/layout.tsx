@@ -34,15 +34,6 @@ export default function RootLayout({
         <QueryProvider>
           {children}
         </QueryProvider>
-        {imageUrl && ( 
-          <Image
-            src={imageUrl}
-            alt="Your social media preview image"
-            width={800}
-            height={600}
-            layout="responsive" 
-          />
-        )}
       </body>
     </html>
   );
