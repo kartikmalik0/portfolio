@@ -23,12 +23,23 @@ Install the dependencies with
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`DATABASE_URL = postgresql://username:password@localhost:5432/database_name
+```bash 
+DATABASE_URL = postgresql://username:password@localhost:5432/database_name
+```
+```bash 
 NEXT_PUBLIC_SITE_TITLE = Kartik Malik
-NEXT_PUBLIC_SITE_DESCRIPTION = Full Stack Developer
-NEXT_PUBLIC_FAVICON_URL = https://utfs.io/f/f3552155-ac03-458f-8b89-fc28a2873f38-hru0oc.ico
-NEXT_PUBLIC_THUMBNAIL_IMAGE = https://utfs.io/f/f70ced27-7431-4e10-b720-2d6671207734-82fh7z.jpg
-` 
+ ```
+```bash 
+NEXT_PUBLIC_SITE_DESCRIPTION = Full Stack Developer 
+```
+```bash 
+NEXT_PUBLIC_FAVICON_URL = https://utfs.io/f/f3552155-ac03-458f-8b89-fc28a2873f38-hru0oc.ico 
+```
+
+```bash 
+NEXT_PUBLIC_THUMBNAIL_IMAGE = https://utfs.io/f/f70ced27-7431-4e10-b720-2d6671207734-82fh7z.jpg 
+```
+
 
 
 ## Generate Prisma 
