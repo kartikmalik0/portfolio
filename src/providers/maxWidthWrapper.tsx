@@ -2,7 +2,7 @@ import { ReactNode } from "react"
 
 const MaxWidthWrapper = ({children}:{children:ReactNode}) => {
   return (
-    <div className="w-16 mx-auto">
+    <div className="">
       {children}
     </div>
   )
