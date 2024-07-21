@@ -3,7 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import QueryProvider from "@/providers/queryProvider";
 import Head from "next/head"
+import 'fumadocs-ui/style.css';
 import Image from "next/image";
+import { RootProvider } from "fumadocs-ui/provider";
 const inter = Inter({ subsets: ["latin"] });
 
 const siteTitle = process.env.NEXT_PUBLIC_SITE_TITLE || "John Doe";
@@ -32,7 +34,9 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <QueryProvider>
-          {children}
+          <RootProvider>
+            {children}
+          </RootProvider>
         </QueryProvider>
       </body>
     </html>

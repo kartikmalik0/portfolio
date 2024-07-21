@@ -5,9 +5,11 @@ const {
 } = require("tailwindcss/lib/util/flattenColorPalette");
 const config: Config = {
     content: [
-        "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+        "./components/**/*.{ts,tsx}",
+        "./app/**/*.{ts,tsx}",
+        "./content/**/*.{md,mdx}",
+        "./mdx-components.{ts,tsx}",
+        "./node_modules/fumadocs-ui/dist/**/*.js",
     ],
     theme: {
         extend: {
