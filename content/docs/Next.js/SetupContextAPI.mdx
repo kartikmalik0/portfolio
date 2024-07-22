@@ -1,0 +1,140 @@
+---
+title: Context API Integrating
+description: A beginner-friendly guide to integrating the Context API in a Next.js app using TypeScript.
+---
+
+## 🚀 Introduction
+
+In this guide, we'll learn how to integrate the Context API into a Next.js app using TypeScript. We'll follow best practices and use the new Next.js App Router and Context Provider.
+
+## 🤔 What is the Context API?
+
+The Context API in React is a way to manage global state. It allows you to share data across all levels of your application without passing props down manually at every level.
+
+## 🛠️ Setting Up a Next.js App
+
+First, make sure you have a Next.js app set up. If not, you can create one with the following command:
+
+```bash
+npx create-next-app@latest my-next-app
+```
+
+## 📦 Creating a Context
+
+Let's create a simple context to manage user authentication state.
+
+1. Create a Context File
+   Create a new file called `AuthContext.tsx` in the `utils/context` directory of your project.
+
+```ts
+"use client";
+import { createContext, useContext, useState, ReactNode } from "react";
+
+interface AuthContextType {
+    user: string | null;
+    login: (username: string) => void;
+    logout: () => void;
+}
+
+const AuthContext = (createContext < AuthContextType) | (undefined > undefined);
+
+const AuthProvider = ({ children }: { children: ReactNode }) => {
+    const [user, setUser] = (useState < string) | (null > null);
+
+    const login = (username: string) => {
+        setUser(username);
+    };
+
+    const logout = () => {
+        setUser(null);
+    };
+
+    return (
+        <AuthContext.Provider value={{ user, login, logout }}>
+            {children}
+        </AuthContext.Provider>
+    );
+};
+
+const useAuth = () => {
+    const context = useContext(AuthContext);
+    if (context === undefined) {
+        throw new Error("useAuth must be used within an AuthProvider");
+    }
+    return context;
+};
+
+export { AuthProvider, useAuth };
+```
+
+2. 🏗️ Use the Context in Your App
+   Wrap your application with the `AuthProvider.tsx` With the new Next.js App Router, you can do this in your custom `app/layout.tsx` file:
+
+```ts
+// app/layout.tsx
+
+
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Head from "next/head";
+const inter = Inter({ subsets: ["latin"] });
+import { AuthProvider } from "@/context/AuthContext";
+
+export default function RootLayout({
+    children,
+}: Readonly<{
+    children: React.ReactNode;
+}>) {
+    return (
+        <html lang="en">
+            <body className={inter.className}>
+                <AuthProvider>
+                    {children}
+                </AuthProvider>
+            </body>
+        </html>
+    );
+}
+```
+
+## 🧩 Using the Context in Components
+
+Now, you can use the useAuth hook in your components to access and update the authentication state.
+
+## 🖥️ Example Component
+
+Create a LoginButton.tsx component to demonstrate how to use the context.
+
+```ts
+import { useAuth } from "@/context/AuthContext";
+
+const LoginButton = () => {
+    const { user, login, logout } = useAuth();
+
+    return (
+        <div>
+            {user ? (
+                <button onClick={logout}>Logout</button>
+            ) : (
+                <button onClick={() => login("exampleUser")}>Login</button>
+            )}
+            {user && <p>Welcome, {user}!</p>}
+        </div>
+    );
+};
+
+export default LoginButton;
+```
+
+## 🌟 Best Practices
+
+1.🛡️Type Safety: Always define the types for your context to ensure type safety and better developer experience.
+
+2.🔄Context Separation: Create separate contexts for different parts of your app to avoid unnecessary re-renders and improve performance.
+
+3.🔧Custom Hooks: Use custom hooks (like useAuth) to encapsulate and simplify the logic for accessing context values.
+
+4.⚠️Error Handling: Ensure proper error handling when using context (e.g., by throwing an error if the context is used outside of its provider).
+
+Feel free to navigate through the different sections to find the topics that interest you the most. Happy coding! 💻✨

@@ -33,11 +33,11 @@ export default function RootLayout({
         {imageUrl && <meta property="og:image" content={imageUrl} />}
       </head>
       <body className={inter.className}>
-        <QueryProvider>
-          <RootProvider>
+        <RootProvider>
+          <QueryProvider>
             {children}
-          </RootProvider>
-        </QueryProvider>
+          </QueryProvider>
+        </RootProvider>
       </body>
     </html>
   );
