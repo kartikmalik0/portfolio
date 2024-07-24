@@ -2,6 +2,7 @@
 
 import { prisma } from "@/lib/connect";
 
+
 export async function fetchHero() {
     try {
         const hero = await prisma.hero.findMany();

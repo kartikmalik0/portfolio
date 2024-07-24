@@ -14,7 +14,6 @@ body {
 .section {
   max-width: 1150px;  
   z-index: 10;        
-  padding-inline: 1rem;
   margin-bottom: 1rem; 
   overflow: hidden;  
   position: relative;

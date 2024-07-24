@@ -16,14 +16,14 @@ const Projects = () => {
 
     return (
         <section className="section ">
-            <div className="  items-center flex gap-6 text-4xl md:text-6xl mb-6">
+            <div className="  items-center px-4 sm:px-0 flex gap-6 text-4xl md:text-6xl mb-6">
                 <div className=" flex-1 h-[1px] opacity-30 bg-whitetext" />
                 <BoxReveal boxColor={boxRevelColor} duration={0.5}>
                     <h3 className=" text-whitetext font-[900]">Projects<span className="text-lightgreen">.</span></h3>
                 </BoxReveal>
             </div>
 
-            <div className=" grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className=" grid px-4 sm:px-0 grid-cols-1 md:grid-cols-2 gap-8">
                 {
                     data?.project && data.project.map((project) => (
                         <div key={project.id}>
@@ -41,7 +41,9 @@ const Projects = () => {
                             <div>
                                 <div className="text-whitetext flex items-center mt-3 gap-3">
                                     <BoxReveal boxColor={boxRevelColor} duration={0.5}>
-                                        <h3 className=" w-fit  flex text-whitetext font-extrabold text-2xl mt-3">{project.title}</h3>
+                                        <h3 className={`text-whitetext font-extrabold text-2xl mt-3 ${project.title.length > 10 ? 'w-[10rem]' : 'w-fit'}`} style={{ wordBreak: "break-all" }}>
+                                            {project.title}
+                                        </h3>
                                     </BoxReveal>
                                     <div className=" flex-1 h-[1px] opacity-30 bg-whitetext" />
                                     <BoxReveal boxColor={boxRevelColor} duration={0.5}>
@@ -78,7 +80,6 @@ const Projects = () => {
                     ))
                 }
             </div>
-
         </section>
     )
 }
