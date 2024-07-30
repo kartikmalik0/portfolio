@@ -1,6 +1,6 @@
 
 import { fetchLinks, fetchResume } from "@/actions/fetch-data"
-import Loading from "@/app/loading"
+// import Loading from "@/app/loading"
 import { useQuery } from "@tanstack/react-query"
 
 type Link = {
@@ -32,9 +32,9 @@ const Navbar = () => {
         return link ? link.url : "#";
     }
 
-    if(isLoading){
-        return <Loading/>
-    }
+    // if(isLoading){
+    //     return <Loading/>
+    // }
 
     return (
         <header className=" sticky z-50 h-[calc(30px+3.6rem)] top-0 backdrop-blur-[12px] bg-[hsla(0,0%,7%,.25)] text-whitetext flex justify-between items-center px-2 sm:px-8 md:px-10  ">

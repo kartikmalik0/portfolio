@@ -3,14 +3,21 @@ import { useQuery } from "@tanstack/react-query"
 import { HeroHighlight } from "./ui/hero-highlight"
 import { fetchHero } from "@/actions/fetch-data"
 import BoxReveal from "./text-revel/box-revel"
+import HeroSuspense from "./suspenses/HeroSuspense"
 
 const Hero = () => {
 
     const boxRevelColor = "#0aff9d"
-    const { data } = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: ["hero"],
         queryFn: async () => await fetchHero()
     })
+
+    if (isLoading) {
+        return (
+            <HeroSuspense />
+        )
+    }
 
 
     return (
