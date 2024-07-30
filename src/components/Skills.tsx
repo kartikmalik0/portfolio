@@ -2,7 +2,7 @@
 
 import { fetchSkills } from "@/actions/fetch-data"
 import { useQuery } from "@tanstack/react-query"
-import BoxReveal from "./magicui/box-revel";
+import BoxReveal from "./text-revel/box-revel";
 
 type Skill = {
     id: string;

@@ -2,7 +2,7 @@
 import { useQuery } from "@tanstack/react-query"
 import { HeroHighlight } from "./ui/hero-highlight"
 import { fetchHero } from "@/actions/fetch-data"
-import BoxReveal from "./magicui/box-revel"
+import BoxReveal from "./text-revel/box-revel"
 
 const Hero = () => {
 

@@ -31,14 +31,17 @@ export async function fetchSkills() {
 }
 
 
-export async function fetchProjects() {
+export async function fetchProjects(pageParam = 0) {
     try {
-        const project = await prisma.project.findMany();
-        return { project };
+      const projects = await prisma.project.findMany({
+        take: 4,
+        skip: pageParam,
+      });
+      return { project: projects };
     } catch (error) {
-        throw new Error("Unable to fetch Projects");
+      throw new Error("Unable to fetch Projects");
     }
-}
+  }
 
 export async function fetchExp() {
     try {

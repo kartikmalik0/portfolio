@@ -1,4 +1,3 @@
-"use client"
 
 import { fetchLinks, fetchResume } from "@/actions/fetch-data"
 import Loading from "@/app/loading"

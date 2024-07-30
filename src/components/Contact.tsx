@@ -1,8 +1,7 @@
-"use client"
 
 import { fetchEmail, fetchLinks } from "@/actions/fetch-data"
 import { useQuery } from "@tanstack/react-query"
-import BoxReveal from "./magicui/box-revel"
+import BoxReveal from "./text-revel/box-revel"
 
 type Link = {
     id: string,

@@ -1,8 +1,7 @@
-"use client"
 import { fetchAbout, fetchLinks } from "@/actions/fetch-data"
 import { useQuery } from "@tanstack/react-query"
 import Skills from "./Skills"
-import BoxReveal from "./magicui/box-revel"
+import BoxReveal from "./text-revel/box-revel"
 import { Key, ReactChild, ReactFragment, ReactPortal } from "react"
 
 
