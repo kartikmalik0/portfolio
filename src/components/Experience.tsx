@@ -3,6 +3,7 @@ import { fetchExp } from "@/actions/fetch-data"
 import { useQuery } from "@tanstack/react-query"
 import BoxReveal from "./text-revel/box-revel"
 import { useEffect, useState } from "react"
+import ExpSuspense from "./suspenses/ExpSuspense"
 
 const Experience = () => {
 
@@ -43,15 +44,15 @@ const Experience = () => {
         <section className="section">
             <div className=" flex px-4 sm:px-0 items-center gap-4 text-5xl md:text-6xl mb-6">
                 {/* <BoxReveal boxColor={boxRevelColor} duration={0.5}> */}
-                    <h3 className="text-whitetext font-[900]">
-                        {isMobile ? "Exp" : "Experience"}
-                        <span className="text-lightgreen">.</span>
-                    </h3>
+                <h3 className="text-whitetext font-[900]">
+                    {isMobile ? "Exp" : "Experience"}
+                    <span className="text-lightgreen">.</span>
+                </h3>
                 {/* </BoxReveal> */}
                 <div className=" flex-1 h-[1px] opacity-30 bg-whitetext" />
             </div>
             {
-                data?.exp && data.exp.map((exp) => (
+                data?.exp ? data.exp.map((exp) => (
                     <div key={exp.id} className=" mt-4 px-4 sm:px-0 border-b border-whitetext border-opacity-[.1]">
                         {/* company */}
                         <div className=" flex justify-between items-center mb-3 text-whitetext">
@@ -100,7 +101,8 @@ const Experience = () => {
                             </div>
                         </BoxReveal>
                     </div>
-                ))
+                )) :
+                    <ExpSuspense />
             }
 
         </section>
