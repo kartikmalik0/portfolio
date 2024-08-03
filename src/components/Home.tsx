@@ -15,10 +15,18 @@ const HomePage = () => {
       <Navbar />
       <MaxWidthWrapper>
         <Hero />
-        <Element name="about"><About /></Element>
-        <Element name="projects"><Projects /></Element>
-        <Element name="experience"><Experience /></Element>
-        <Element id="contactSection" className="mb-32" name="contact"><Contact /></Element>
+        <Element name="about">
+          <About />
+        </Element>
+        <Element name="projects">
+          <Projects />
+        </Element>
+        <Element name="experience">
+          <Experience />
+        </Element>
+        <Element id="contactSection" className="mb-32" name="contact">
+          <Contact />
+        </Element>
       </MaxWidthWrapper>
     </div>
   )
