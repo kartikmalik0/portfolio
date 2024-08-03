@@ -38,9 +38,9 @@ const Contact = () => {
     return (
         <section id="contact" className="section" style={{ paddingBlock: "5rem" }}>
             <div className=" flex justify-center gap-6 text-5xl md:text-6xl w-full mb-6">
-                <BoxReveal boxColor={boxRevelColor} duration={0.5}>
+                {/* <BoxReveal boxColor={boxRevelColor} duration={0.5}> */}
                     <h3 className=" text-whitetext font-[900] mx-auto">Contact<span className="text-lightgreen">.</span></h3>
-                </BoxReveal>
+                {/* </BoxReveal> */}
             </div>
             <div className="w-full flex justify-center">
                 <BoxReveal boxColor={boxRevelColor} duration={0.5}>

@@ -48,7 +48,6 @@ const Skills = () => {
                             </div>
                         </BoxReveal>
                 }
-
             </div>
             <div className=" overflow-hidden w-fit ">
                 {/* <BoxReveal boxColor={boxRevelColor} duration={0.5}> */}
@@ -59,7 +58,7 @@ const Skills = () => {
                 {/* </BoxReveal> */}
                 {
                     isLoading ?
-                        <SkillsSuspense length={5}/> :
+                        <SkillsSuspense length={5} /> :
                         <BoxReveal boxColor={boxRevelColor} duration={0.5}>
                             <div className=" flex flex-wrap gap-4 mb-6">
                                 {skills?.map((skill) => (
