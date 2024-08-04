@@ -1,4 +1,3 @@
-// app/page.js (or wherever your Home component is located)
 import HomePage from "@/components/Home";
 import Sidenav from "@/components/Sidenav";
 import { prisma } from "@/lib/connect";
