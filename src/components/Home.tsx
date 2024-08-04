@@ -2,19 +2,29 @@
 import About from "./About"
 import Contact from "./Contact"
 import Experience from "./Experience"
-import Hero from "./Hero"
 import Navbar from "./Navbar"
 import { Element } from 'react-scroll';
 
 import Projects from "./Projects"
 import MaxWidthWrapper from "@/providers/maxWidthWrapper"
+import Hero from "./Hero"
 
-const HomePage = () => {
+type  HeroData = {
+  id: string;
+  name: string;
+  role: string;
+  roleDescription: string;
+  email: string;
+  phoneNumber: string;
+  resumeUrl: string | null;
+}[]
+
+const HomePage = ({heroData}:{heroData:HeroData}) => {
   return (
     <div className="bg-[#111]">
       <Navbar />
       <MaxWidthWrapper>
-        <Hero />
+        <Hero heroData={heroData} />
         <Element name="about">
           <About />
         </Element>

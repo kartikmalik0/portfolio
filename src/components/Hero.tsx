@@ -4,16 +4,27 @@ import { HeroHighlight } from "./ui/hero-highlight"
 import { fetchHero } from "@/actions/fetch-data"
 import BoxReveal from "./text-revel/box-revel"
 import HeroSuspense from "./suspenses/HeroSuspense"
+import { Key, ReactChild, ReactFragment, ReactPortal } from "react"
 
-const Hero = () => {
+type Hero = {
+    id: string;
+    name: string;
+    role: string;
+    roleDescription: string;
+    email: string;
+    phoneNumber: string;
+    resumeUrl: string | null;
+}[]
+
+const Hero = ({ heroData }: { heroData: Hero }) => {
 
     const boxRevelColor = "#0aff9d"
-    const { data, isLoading } = useQuery({
-        queryKey: ["hero"],
-        queryFn: async () => await fetchHero()
-    })
+    // const { data, isLoading } = useQuery({
+    //     queryKey: ["hero"],
+    //     queryFn: async () => await fetchHero()
+    // })
 
-    if (isLoading) {
+    if (!heroData) {
         return (
             <HeroSuspense />
         )
@@ -23,7 +34,7 @@ const Hero = () => {
     return (
         <HeroHighlight className="w-full">
             {
-                data?.hero && data.hero.map((hero) => (
+                heroData && heroData.map((hero: { id: Key | null | undefined; name: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; role: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; roleDescription: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined }) => (
                     <section key={hero.id} className="section py-20 ">
                         <div className=" px-4 sm:px-0">
                             <div className="z-10 overflow-hidden relative">
