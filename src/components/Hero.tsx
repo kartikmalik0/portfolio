@@ -24,17 +24,20 @@ const Hero = ({ heroData }: { heroData: Hero }) => {
     //     queryFn: async () => await fetchHero()
     // })
 
-    if (!heroData) {
+    console.log()
+
+    if (heroData.length === 0) {
         return (
             <HeroSuspense />
         )
     }
 
+    console.log(heroData)
 
     return (
         <HeroHighlight className="w-full">
             {
-                heroData && heroData.map((hero: { id: Key | null | undefined; name: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; role: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; roleDescription: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined }) => (
+                 heroData.map((hero: { id: Key | null | undefined; name: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; role: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; roleDescription: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined }) => (
                     <section key={hero.id} className="section py-20 ">
                         <div className=" px-4 sm:px-0">
                             <div className="z-10 overflow-hidden relative">
