@@ -5,7 +5,6 @@ import { prisma } from "@/lib/connect";
 
 async function fetchHero() {
   try {
-    console.log("fetching hero")
     const hero = await prisma.hero.findMany();
     return { hero };
   } catch (error) {
@@ -13,8 +12,7 @@ async function fetchHero() {
   }
 }
 
-export async function fetchAbout() {
-  console.log("fetching aobut")
+ async function fetchAbout() {
   try {
       const about = await prisma.about.findMany();
       return { about };
