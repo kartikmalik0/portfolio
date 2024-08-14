@@ -16,23 +16,28 @@ export async function fetchHero() {
     }
 }
 
-export async function fetchAbout() {
-    try {
-        const about = await prisma.about.findMany({
-            cacheStrategy: {
-                ttl: 3600, // Cache data for 1 hour (3600 seconds)
-                swr: 3600, // Serve stale data for up to 1 hour while fetching fresh data
-            },
-        });
-        return { about };
-    } catch (error) {
-        throw new Error("Unable to fetch About");
-    }
-}
+// export async function fetchAbout() {
+//     try {
+//         const about = await prisma.about.findMany({
+//             cacheStrategy: {
+//                 ttl: 3600, // Cache data for 1 hour (3600 seconds)
+//                 swr: 3600, // Serve stale data for up to 1 hour while fetching fresh data
+//             },
+//         });
+//         return { about };
+//     } catch (error) {
+//         throw new Error("Unable to fetch About");
+//     }
+// }
 
 export async function fetchSkills() {
     try {
-        const skill = await prisma.skill.findMany();
+        const skill = await prisma.skill.findMany({
+            cacheStrategy: {
+                ttl: 3600, // 1 hour
+                swr: 3600, // 1 hour
+            },
+        });
         return { skill };
     } catch (error) {
         throw new Error("Unable to fetch Skills");
@@ -44,6 +49,10 @@ export async function fetchProjects(pageParam = 0) {
         const projects = await prisma.project.findMany({
             take: 4,
             skip: pageParam,
+            cacheStrategy: {
+                ttl: 3600, // 1 hour
+                swr: 3600, // 1 hour
+            },
         });
         return { project: projects };
     } catch (error) {
@@ -53,7 +62,12 @@ export async function fetchProjects(pageParam = 0) {
 
 export async function fetchExp() {
     try {
-        const exp = await prisma.experience.findMany();
+        const exp = await prisma.experience.findMany({
+            cacheStrategy: {
+                ttl: 3600, // 1 hour
+                swr: 3600, // 1 hour
+            },
+        });
         return { exp };
     } catch (error) {
         throw new Error("Unable to fetch Projects");
@@ -62,7 +76,12 @@ export async function fetchExp() {
 
 export async function fetchLinks() {
     try {
-        const links = await prisma.socialLink.findMany();
+        const links = await prisma.socialLink.findMany({
+            cacheStrategy: {
+                ttl: 3600, // 1 hour
+                swr: 3600, // 1 hour
+            },
+        });
         return { links };
     } catch (error) {
         throw new Error("Unable to fetch Links");
@@ -74,6 +93,10 @@ export async function fetchResume() {
         const hero = await prisma.hero.findMany({
             select: {
                 resumeUrl: true,
+            },
+            cacheStrategy: {
+                ttl: 3600, // 1 hour
+                swr: 3600, // 1 hour
             },
         });
         return { resumeUrl: hero[0].resumeUrl };
@@ -87,6 +110,10 @@ export async function fetchEmail() {
         const hero = await prisma.hero.findMany({
             select: {
                 email: true,
+            },
+            cacheStrategy: {
+                ttl: 3600, // 1 hour
+                swr: 3600, // 1 hour
             },
         });
         return { email: hero[0].email };
