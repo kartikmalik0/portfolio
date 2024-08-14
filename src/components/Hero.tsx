@@ -24,7 +24,6 @@ const Hero = ({ heroData }: { heroData: Hero }) => {
     //     queryFn: async () => await fetchHero()
     // })
 
-    console.log()
 
     if (heroData.length === 0) {
         return (
@@ -32,7 +31,6 @@ const Hero = ({ heroData }: { heroData: Hero }) => {
         )
     }
 
-    console.log(heroData)
 
     return (
         <HeroHighlight className="w-full">
