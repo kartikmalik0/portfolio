@@ -1,7 +1,5 @@
 "use client"
-import { useQuery } from "@tanstack/react-query"
 import { HeroHighlight } from "./ui/hero-highlight"
-import { fetchHero } from "@/actions/fetch-data"
 import BoxReveal from "./text-revel/box-revel"
 import HeroSuspense from "./suspenses/HeroSuspense"
 import { Key, ReactChild, ReactFragment, ReactPortal } from "react"
