@@ -9,7 +9,7 @@ import Projects from "./Projects"
 import MaxWidthWrapper from "@/providers/maxWidthWrapper"
 import Hero from "./Hero"
 
-type  HeroData = {
+type HeroData = {
   id: string;
   name: string;
   role: string;
@@ -18,15 +18,21 @@ type  HeroData = {
   phoneNumber: string;
   resumeUrl: string | null;
 }[]
+type AboutData = {
+  id: string;
+  description1: string;
+  description2: string;
+  description3: string;
+}[]
 
-const HomePage = ({heroData}:{heroData:HeroData}) => {
+const HomePage = ({ heroData, aboutData }: { heroData: HeroData, aboutData: AboutData }) => {
   return (
     <div className="bg-[#111]">
       <Navbar />
       <MaxWidthWrapper>
         <Hero heroData={heroData} />
         <Element name="about">
-          <About />
+          <About aboutData={aboutData} />
         </Element>
         <Element name="projects">
           <Projects />
