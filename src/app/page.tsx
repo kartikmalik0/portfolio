@@ -5,12 +5,7 @@ import prisma from "@/lib/connect";
 
 async function fetchHero() {
   try {
-    const hero = await prisma.hero.findMany({
-      cacheStrategy: {
-        ttl: 3600, // 1 hour
-        swr: 3600  // 1 hour
-      }
-    });
+    const hero = await prisma.hero.findMany();
     return { hero };
   } catch (error) {
     throw new Error("Unable to fetch Hero");
@@ -19,12 +14,7 @@ async function fetchHero() {
 
 async function fetchAbout() {
   try {
-    const about = await prisma.about.findMany({
-      cacheStrategy: {
-        ttl: 3600, // 1 hour
-        swr: 3600  // 1 hour
-      }
-    });
+    const about = await prisma.about.findMany();
     return { about };
   } catch (error) {
     throw new Error("Unable to fetch About");
