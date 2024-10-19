@@ -4,6 +4,7 @@ import "./globals.css";
 import QueryProvider from "@/providers/queryProvider";
 import Head from "next/head"
 import Image from "next/image";
+import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 
 const siteTitle = process.env.NEXT_PUBLIC_SITE_TITLE || "John Doe";
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <QueryProvider>
           {children}
+          <Analytics />
         </QueryProvider>
       </body>
     </html>
