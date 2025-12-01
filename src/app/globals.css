@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #111;
+  --foreground: #ededed;
+  --lightgreen: #0aff9d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-lightgreen: var(--lightgreen)
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.section {
+  max-width: 1150px;  
+  z-index: 10;        
+  margin-bottom: 1rem; 
+  overflow: hidden;  
+  position: relative;
+  margin-inline: auto;
+}
+
+/* For small screens and above (sm) */
+@media (min-width: 640px) {
+  .section {
+    padding-inline: 1rem;
+    margin-bottom: 3rem; 
+  }
+}
+
+@media (max-width: 640px) {
+  #contactSection {
+    margin-bottom: 3rem;
+  }
+}
+
+/* For medium screens and above (md) */
+@media (min-width: 768px) {
+  .section {
+    padding: 5.7rem;
+  }
+}
+
+
+/* For small screens and above (sm) */
+@media (min-width: 640px) {
+  .section {
+    padding-inline: 1rem;
+    margin-bottom: 3rem; 
+  }
+}
+
+@media (max-width: 640px) {
+  #contactSection {
+    margin-bottom: 3rem;
+  }
+}
+
+/* For medium screens and above (md) */
+@media (min-width: 768px) {
+  .section {
+    padding: 5.7rem;
+  }
 }
