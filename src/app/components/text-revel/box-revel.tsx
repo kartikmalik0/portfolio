@@ -3,6 +3,7 @@
 import { JSX, useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
+
 interface BoxRevealProps {
   children: JSX.Element;
   width?: "fit-content" | "100%";
